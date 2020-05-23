@@ -23,14 +23,14 @@
 
             <div id="body">
                 <section id="form">
-                    <form id="input">
+                    <form action:"Cadastrar.php" id="input">
                         <label for="peso">Peso:</label>
                         <input type="number" id="peso"> kg
                         <p>Digite seu peso (em Kg).
                             <br>Ex.: 80 Kg</p>
 
                         <label for="altura">Altura:</label>
-                        <input type="number" id="altura"> m
+                        <input type="number" id="altura"step="0.01" min="1" max="3"required> m
                         <p>Digite sua altura (em m).
                             <br>Ex.: 1,80 m</p>
                     </form>

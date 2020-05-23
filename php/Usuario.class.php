@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 // declaração de classe
 class Usuario {

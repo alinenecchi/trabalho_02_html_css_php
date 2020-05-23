@@ -17,6 +17,20 @@ if(isset($_POST))
     // instancia um objeto do tipo Usuario passando informações pelo construtor
     $usuario = new Usuario($nome, $idade, $peso, $altura);
 
+  /*
+  $cadastro = array()
+    array_push($cadastro, $usuario)
+    
+
+    function calcularImc() {
+       return $peso / ($altura **)
+    }
+
+    function mediaImc($cadastro) {
+        
+    }
+*/
+
     echo "Dados recebidos: ".$usuario."<br/>";
 
 
