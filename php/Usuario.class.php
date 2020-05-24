@@ -8,10 +8,10 @@ class Usuario {
     // private = apenas na classe
     // protected = na classe e nas subclasses
     // public = aberta
-    private $nome;
+    public $nome;
     public $idade;
-    protected $peso;
-    private $altura;
+    public $peso;
+    public $altura;
 
     // construtor é definido pela palavra reservada __construct
     // pode ou não ter parâmetros
@@ -23,7 +23,7 @@ class Usuario {
         $this->nome = $nome;
         $this->idade = $idade;
         $this->peso = $peso;
-        $this->altura =$altura;
+        $this->altura = $altura;
     }
 
     // "método mágico" para criação de set genérico
@@ -41,11 +41,18 @@ class Usuario {
     // método para impressão de dados do objeto
     function __toString()
     {
-        return "Nome: " . $this->nome . "  Idade: " .
-            $this->idade . "  Peso: " . $this->peso . "  Altura: " . $this->altura . "";
+        return $this->nome . " , " .
+            $this->idade . "  anos. Seu IMC é " . $this->imc . "e você está " 
+            . $this->categoria . "Resultado obtido a partir do peso " . $this->peso . 
+						"kg. e da altura " . $this->altura . "m."
     }
 
 }
+//NOME IDADE anos
+//Seu imc é IMC e você está com CATEGORIA
+//Resultado obtido a partir do peso PESO e da altura ALTURA
+//A média de imc dos internautas é IMC corresponde à CATEGORIA
+//A média de idade é IDADE anos
 
 
 ?>
