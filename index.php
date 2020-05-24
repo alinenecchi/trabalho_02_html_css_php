@@ -68,6 +68,7 @@
 
                       <input class="button" type="submit" name="calcular" id="calcular" value="Calcular"/>
                       <input class="button" type="reset" id="limpar" value="Limpar"/>
+
                     </form>
                 </section>
                 
@@ -111,7 +112,6 @@
                         </tbody>
                     </table>
                 </section>
-
                 <section id="alunas">
                     <p>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</p>
                 </section>
