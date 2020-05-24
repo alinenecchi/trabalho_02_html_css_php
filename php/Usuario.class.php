@@ -24,6 +24,8 @@ class Usuario {
         $this->idade = $idade;
         $this->peso = $peso;
         $this->altura = $altura;
+        $this->categoria = "";
+        $this->imc = "";
     }
 
     // "método mágico" para criação de set genérico
@@ -44,7 +46,7 @@ class Usuario {
         return $this->nome . " , " .
             $this->idade . "  anos. Seu IMC é " . $this->imc . "e você está " 
             . $this->categoria . "Resultado obtido a partir do peso " . $this->peso . 
-						"kg. e da altura " . $this->altura . "m."
+						"kg. e da altura " . $this->altura . "m.";
     }
 
 }
