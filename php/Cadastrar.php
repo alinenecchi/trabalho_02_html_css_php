@@ -26,51 +26,51 @@ if(isset($_POST))
       $altura = $user->altura;
       $imc = $peso / ($altura ** 2);
       array_push($imc_lista, $imc);
-      return $imc;
-    };
+      return number_format($imc, 2, '.', '');
+    }
 
     function mediaImc($imc_lista) {
       $soma = array_sum($imc_lista);
       $divisor = count($imc_lista);
       $media = $soma / $divisor;
-      return $media;
-    };
+      return number_format($media, 2, '.', '');
+    }
 
     function mediaIdade($idade_lista){
       $soma = array_sum($idade_lista);
       $divisor = count($idade_lista);
       $media = $soma / $divisor;
-      return $media
-    };
+      return number_format($media, 1);
+    }
 
     function categoria($usuario){
-      $imc = 	$usuario->imc
+      $imc = 	$usuario->imc;
 			switch ($imc){
-      case ($imc < 18.5):
-      	$usuario->categoria = "Abaixo do Peso";
-        break;
-      case ($imc >= 18.5 && $imc <= 24.9):
-        $usuario->categoria = "Peso saudável";
-        break;
-      case ($imc >= 25.0 && $imc <= 29.9):
-        $usuario->categoria = "Sobrepeso";
-        break;
-      case ($imc >= 30.0 && $imc <= 34.9):
-        $usuario->categoria = "Obesidade Grau I";
-        break;
-      case ($imc > 35 && $imc <= 39.9):
-        $usuario->categoria = "Obesidade Grau II";
-        break;
-      case ($imc => 40):
-        $usuario->categoria = "Obesidade Grau III";
-        break;
-    	};
+        case ($imc < 18.5):
+          $usuario->categoria = " abaixo do peso";
+          break;
+        case ($imc >= 18.5 && $imc <= 24.9):
+          $usuario->categoria = " com peso saudável";
+          break;
+        case ($imc >= 25.0 && $imc <= 29.9):
+          $usuario->categoria = " com sobrepeso";
+          break;
+        case ($imc >= 30.0 && $imc <= 34.9):
+          $usuario->categoria = " com obesidade grau I";
+          break;
+        case ($imc > 35 && $imc <= 39.9):
+          $usuario->categoria = " com obesidade grau II";
+          break;
+        case ($imc >= 40):
+          $usuario->categoria = " com obesidade grau III";
+          break;
+        };
     };
 
     // instancia um objeto do tipo Usuario passando informações pelo construtor
-    $usuario1 = new Usuario($nome1, $idade1, $peso1, $altura1);
-		$usuario2 = new Usuario($nome2, $idade2, $peso2, $altura2);
-		$usuario3 = new Usuario($nome3, $idade3, $peso3, $altura3);
+    $usuario1 = new Usuario($nome1, $idade1, $peso1, $altura1,$imc1);
+		$usuario2 = new Usuario($nome2, $idade2, $peso2, $altura2,$imc2);
+		$usuario3 = new Usuario($nome3, $idade3, $peso3, $altura3,$imc3);
 
 		$imc_lista = array();
     $idade_lista = array($peso1, $peso2, $peso3);
@@ -86,11 +86,13 @@ if(isset($_POST))
     echo "Dados recebidos: " . $usuario1 . "<br>";
 		echo "Dados recebidos: " . $usuario2 . "<br>";
 		echo "Dados recebidos: " . $usuario3 . "<br>";
-
+    echo "A média das idades é: "
+    echo "A média dos IMCs é: "
 
 
 
 }
 
 ?>
+
 
