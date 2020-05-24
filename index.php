@@ -23,7 +23,7 @@
 
             <div id="body">
                 <section id="form">
-                    <form action:"php/cadastrar.php" method="post" id="input" name="calcular">
+                    <form action="php/cadastrar.php" method="post" id="input">
                       <article class="cardUsuario">
                         <label for="nome1" id="nome01" class="labels">Nome:</label>
                         <input type="text" name="nome1" id="nome1" placeholder="Digite o seu nome" required>
@@ -66,9 +66,8 @@
                         <input type="number" name="altura3" id="altura3" step="0.01" min="1" max="3"required class="inputs"  placeholder="Metros   Ex: 1,67" required>
                    		</article>
 
-                      <input class="button" type="submit" name="calcular" id="calcular" value="Calcular"/>
+                      <input class="button" type="submit" id="calcular" value="Calcular"/>
                       <input class="button" type="reset" id="limpar" value="Limpar"/>
-
                     </form>
                 </section>
                 
@@ -112,6 +111,7 @@
                         </tbody>
                     </table>
                 </section>
+
                 <section id="alunas">
                     <p>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</p>
                 </section>

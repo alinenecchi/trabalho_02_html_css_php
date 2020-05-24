@@ -2,9 +2,8 @@
 
 // verifica se as informações vieram
 // através do método POST
-if(isset($_POST["calcular"]))
+if(isset($_POST))
 {
-
     // chamada da classe para instância
     include "usuario.class.php";
 
@@ -21,36 +20,28 @@ if(isset($_POST["calcular"]))
     $idade3 = $_POST["idade3"];
     $peso3 = $_POST["peso3"];
     $altura3 = $_POST["altura3"];
-    
-    // instancia um objeto do tipo Usuario passando informações pelo construtor
-		
-    $usuario1 = new Usuario($nome1, $idade1, $peso1, $altura1);
-		$usuario2 = new Usuario($nome2, $idade2, $peso2, $altura2);
-		$usuario3 = new Usuario($nome3, $idade3, $peso3, $altura3);
-
-    
-		$imc_lista = array()
-    $idade_lista = array()
 
     function calcularImc($user) {
-			$imc = $user->peso / ($user->altura**)
-			array_push($imc_lista, $imc)
-       return $imc
-    }
+      $peso = $user->peso;
+      $altura = $user->altura;
+      $imc = $peso / ($altura ** 2);
+      array_push($imc_lista, $imc);
+      return $imc;
+    };
 
     function mediaImc($imc_lista) {
-			$media array_sum($imc_lista) / count($imc_lista)
-      return $media
-    }
+      $soma = array_sum($imc_lista);
+      $divisor = count($imc_lista);
+      $media = $soma / $divisor;
+      return $media;
+    };
 
     function mediaIdade($idade_lista){
-      $media array_sum($idade_lista) / count($idade_lista)
+      $soma = array_sum($idade_lista);
+      $divisor = count($idade_lista);
+      $media = $soma / $divisor;
       return $media
-    }
-
-		$usuario1->imc = calcularImc($usuario1)
-		$usuario2->imc = calcularImc($usuario2)
-		$usuario3->imc = calcularImc($usuario3)
+    };
 
     function categoria($usuario){
       $imc = 	$usuario->imc
@@ -73,16 +64,29 @@ if(isset($_POST["calcular"]))
       case ($imc => 40):
         $usuario->categoria = "Obesidade Grau III";
         break;
-    	}
-    }
+    	};
+    };
 
+    // instancia um objeto do tipo Usuario passando informações pelo construtor
+    $usuario1 = new Usuario($nome1, $idade1, $peso1, $altura1);
+		$usuario2 = new Usuario($nome2, $idade2, $peso2, $altura2);
+		$usuario3 = new Usuario($nome3, $idade3, $peso3, $altura3);
+
+		$imc_lista = array();
+    $idade_lista = array($peso1, $peso2, $peso3);
     
+		$usuario1->imc = calcularImc($usuario1);
+		$usuario2->imc = calcularImc($usuario2);
+		$usuario3->imc = calcularImc($usuario3);
 
+    categoria($usuario1);
+		categoria($usuario2);
+		categoria($usuario3);
     
+    echo "Dados recebidos: " . $usuario1 . "<br>";
+		echo "Dados recebidos: " . $usuario2 . "<br>";
+		echo "Dados recebidos: " . $usuario3 . "<br>";
 
-    echo "Dados recebidos: " .$usuario1. "<br>";
-		echo "Dados recebidos: " .$usuario2. "<br>";
-		echo "Dados recebidos: " .$usuario3. "<br>";
 
 
 
