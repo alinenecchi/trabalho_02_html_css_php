@@ -72,7 +72,7 @@ if(isset($_POST))
 		$usuario2 = new Usuario($nome2, $idade2, $peso2, $altura2,$imc2);
 		$usuario3 = new Usuario($nome3, $idade3, $peso3, $altura3,$imc3);
 
-		$imc_lista = array();
+		$imc_lista = array($imc1, $imc2, $imc3);
     $idade_lista = array($peso1, $peso2, $peso3);
     
 		$usuario1->imc = calcularImc($usuario1);
