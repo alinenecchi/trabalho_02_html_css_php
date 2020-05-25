@@ -1,2 +1,2 @@
-run = "./index.php"
+run = "php -S 0.0.0.0:8000 -t ."
 language = "php"
