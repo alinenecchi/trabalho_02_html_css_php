@@ -130,19 +130,19 @@
 									$usuario->categoria = " " . $cat_1;
 									break;
 								case ($imc >= 18.5 && $imc <= 24.9):
-									$usuario->categoria = " com " . $cat_2 ."";
+									$usuario->categoria = " com $cat_2 ";
 									break;
 								case ($imc >= 25.0 && $imc <= 29.9):
-									$usuario->categoria = " com " . $cat_3 . "";
+									$usuario->categoria = " com $cat_3 ";
 									break;
 								case ($imc >= 30.0 && $imc <= 34.9):
-									$usuario->categoria = " com " . $cat_4 . "";
+									$usuario->categoria = " com $cat_4 ";
 									break;
 								case ($imc > 35 && $imc <= 39.9):
-									$usuario->categoria = " com " . $cat_5 . "";
+									$usuario->categoria = " com $cat_5 ";
 									break;
 								case ($imc >= 40):
-									$usuario->categoria = " com " . $cat_6 . "";
+									$usuario->categoria = " com $cat_6 ";
 									break;
 							};
 						};
@@ -190,7 +190,7 @@
 						echo $usuario1;
 						echo $usuario2;
 						echo $usuario3;											
-						echo "<p>A média de IMC dos internautas é " . $media_imc . " e corresponde à categoria " . categ_media($media_imc) . ".</p>";
+						echo "<p>A média de IMC dos internautas é $media_imc e corresponde à categoria " . categ_media($media_imc) . ".</p>";
 						echo "<p>A média de idade é " . mediaIdade($idade_lista) ." anos.</p>";
 					}
 					echo "</div>";
