@@ -81,15 +81,15 @@
 					{
 						include "php/usuario.class.php";
 						
-						$nome1 = strtoupper($_POST["nome1"]);
+						$nome1 = mb_strtoupper($_POST["nome1"]);
 						$idade1 = $_POST["idade1"];
 						$peso1 = $_POST["peso1"];
 						$altura1 = $_POST["altura1"];
-						$nome2 = strtoupper($_POST["nome2"]);
+						$nome2 = mb_strtoupper($_POST["nome2"]);
 						$idade2 = $_POST["idade2"];
 						$peso2 = $_POST["peso2"];
 						$altura2 = $_POST["altura2"];
-						$nome3 = strtoupper($_POST["nome3"]);
+						$nome3 = mb_strtoupper($_POST["nome3"]);
 						$idade3 = $_POST["idade3"];
 						$peso3 = $_POST["peso3"];
 						$altura3 = $_POST["altura3"];
